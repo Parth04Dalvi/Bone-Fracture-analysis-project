@@ -1,52 +1,53 @@
-AI-Driven Fracture Detector & Radiologist Assistant
-🩺 Computer Vision (CV) Project for Medical Diagnostics
-This project simulates a high-impact application of Machine Learning in the healthcare sector. It demonstrates the full pipeline of a Computer Vision service: from image upload and inference execution to structured data output and diagnostic visualization.
+🦴 AI Fracture Detector (Simulated)
 
-✨ Key Features & Technical Highlights
-Feature
+This project is a single-file React application that simulates a Computer Vision Model designed for orthopedic diagnostics. Users can upload a mock X-ray image and run a simulated machine learning analysis to detect and localize fractures, presenting the findings in a structured report.
 
-Technical Skill Demonstrated
+✨ Key Features
 
-CV Visualization Overlay
+Image Upload & Preview: Allows users to upload any image (simulated X-ray) and displays it clearly in a dedicated viewer panel.
 
-Uses React state and computed coordinates to dynamically draw a Bounding Box on the X-ray image, localizing the simulated fracture.
+Simulated ML Analysis: Runs a mock diagnostic process that randomly determines the presence of a fracture, calculates a confidence score, and suggests a treatment recommendation.
 
-Python ML Simulation
+Bounding Box Localization: If a fracture is detected in the simulation, a red bounding box is dynamically rendered over the image preview, marking the estimated location of the fracture.
 
-The fracture_analyzer.py file demonstrates the necessary backend architecture to handle image input, run ML inference, and return a standardized JSON diagnostic report.
+Structured Diagnostic Report: Presents the analysis results (Status, Confidence Score, Fracture Type, Recommendation) in a clear, organized format below the viewer.
 
-Structured Diagnostic Output
+Responsive Design: Built with React and Tailwind CSS for an intuitive, dark-themed interface optimized for modern web browsers.
 
-Processes and displays the ML model's output, including Confidence Score, Fracture Type, and a Clinical Recommendation.
+⚙️ Technology Stack
 
-Modern React UI
+Frontend Framework: React (Functional Components and Hooks)
 
-Utilizes functional components and Tailwind CSS to create a clean, professional, and dark-themed interface suitable for medical/technical tooling.
+Language: JavaScript
 
-Stateful Analysis Workflow
+Styling: Tailwind CSS
 
-Manages loading, error, and report states to simulate a robust, real-world asynchronous API call for analysis.
+Icons: Lucide-React
 
-🛠️ Technology Stack
-Frontend: React (for UI components and state management), Tailwind CSS (for modern aesthetics).
+Core Logic: The diagnostic process is implemented via the simulateApiCall function, demonstrating how asynchronous ML model results would typically be handled and visualized in a real-world application.
 
-Visualization: HTML Image and CSS Overlays (simulating CV bounding box rendering).
+▶️ How to Use
 
-Backend Logic (Simulated): Python (demonstrating the structure of an ML inference service).
+The application follows a simple, three-step workflow:
 
-Data Format: JSON (for structured data transmission between layers).
+Upload Image: Click the "Click to select image" area in the left panel and upload any image file from your device. The image will appear in the central viewer.
 
-🚀 How to Run the Simulator
-Open the Application: Load the index.jsx file in a React environment.
+Run Analysis: Click the Run Diagnostic Analysis button. A loading spinner will appear while the simulated analysis runs (approx. 1.5 seconds).
 
-Upload an Image: Click the upload zone and select any image (simulating an X-ray).
+View Report: Once the analysis is complete, the results section will appear at the bottom of the screen.
 
-Run Analysis: Click the "Run Diagnostic Analysis" button.
+If a fracture is detected, the status will be red, and a bounding box will highlight the simulated injury location in the viewer.
 
-View Results: After a short simulated delay, the ML Diagnostic Report will appear.
+If no fracture is detected, the status will be green.
 
-If a fracture is detected (60% chance), a red bounding box will appear on the X-ray image.
+Note: All diagnostic results and bounding box coordinates are simulated using random number generation for demonstration purposes.
 
-The report will display the Confidence Score and Fracture Type.
+📁 Component Structure
 
-The fracture_analyzer.py file serves as a reference for the server-side logic required to generate the structured data consumed by the React front-end.
+The entire application logic is contained within the App component:
+
+BoundingBoxOverlay: A sub-component responsible for calculating and rendering the scaled, positioned bounding box over the uploaded image when a fracture is reported.
+
+simulateApiCall: A mock function that mimics the latency and structured JSON output of a remote machine learning prediction endpoint.
+
+useState / useCallback: Used extensively to manage the application state (file, preview URL, loading status, and the final diagnostic report).
