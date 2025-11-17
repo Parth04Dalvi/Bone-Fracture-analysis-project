@@ -1,5 +1,7 @@
 🦴 AI Fracture Detector (Simulated)
 
+<img width="839" height="692" alt="image" src="https://github.com/user-attachments/assets/9aa37843-6738-49e4-9188-c61334ebecee" />
+
 This project is a single-file React application that simulates a Computer Vision Model designed for orthopedic diagnostics. Users can upload a mock X-ray image and run a simulated machine learning analysis to detect and localize fractures, presenting the findings in a structured report.
 
 ✨ Key Features
